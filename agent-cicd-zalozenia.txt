@@ -1,0 +1,26 @@
+Przygotuj agenta, który ułatwi mi implementacje aplikacji i zmian, na serwerze developerskim.
+
+Server docker
+hostname: debian
+ip: 192.168.0.106
+
+źródło aplikacji repozytoria github: https://github.com/fatalny-bit/baza-ksiazek.git
+
+Co jakie informacje będą potrzebne, by po wypushowaniu zmian na github, zmiany w kodzie były implementowane na serwerze.
+
+
+To do:
+
+Potrzebujesz:
+użytkownika (np. debian)
+IP: 192.168.0.106
+port SSH (domyślnie 22)
+klucz prywatny (dodany do GitHub Secrets)
+klucz publiczny (dodany do ~/.ssh/authorized_keys na serwerze)
+
+Lokalizacja aplikacji na serwerze
+Musisz ustalić:
+katalog, w którym będzie stał projekt, np. /srv/baza-ksiazek
+plik docker-compose.yml w tym katalogu
+skrypt deployujący, np. /usr/local/bin/deploy.sh
+Agent musi wiedzieć, gdzie ma wykonać docker compose pull i docker compose up -d.
