@@ -1,0 +1,7 @@
+środowisko: docker
+http: ngnix
+db: mariadb
+język: php
+
+aplikacja:
+ściezka: /srv/baza-ksiazek
