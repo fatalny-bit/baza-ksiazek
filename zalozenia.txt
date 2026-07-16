@@ -4,4 +4,6 @@ db: mariadb
 język: php
 
 aplikacja:
-ściezka: /srv/baza-ksiazek
+ściezka dla aplikacji: 
+DEV /srv/baza-ksiazek-dev
+PROD /srv/baza-ksiazek
