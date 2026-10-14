@@ -4,10 +4,10 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     environment:
-      DB_PATH: /var/www/html/database/biblioteka.db
+      DB_PATH: /var/lib/biblioteka/biblioteka.db
     volumes:
       - .:/var/www/html:ro
-      - sqlite_data:/var/www/html/database
+      - sqlite_data:/var/lib/biblioteka
     restart: unless-stopped
 
   nginx:
