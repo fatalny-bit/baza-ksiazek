@@ -1,0 +1,25 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      DB_PATH: /var/www/html/database/biblioteka.db
+    volumes:
+      - .:/var/www/html:ro
+      - sqlite_data:/var/www/html/database
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.27-alpine
+    depends_on:
+      - php
+    ports:
+      - "${APP_PORT:-7001}:80"
+    volumes:
+      - .:/var/www/html:ro
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
